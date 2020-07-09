@@ -5,4 +5,3 @@ function mostrar()
 {
 	alert("BORRO LINEAS");
 }
-
