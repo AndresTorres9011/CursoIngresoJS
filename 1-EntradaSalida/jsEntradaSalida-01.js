@@ -5,6 +5,6 @@ function mostrar()
 {
 	
  
- alert("hola mundo");
+ alert("nueva prueba de tipeo");
 }
 
