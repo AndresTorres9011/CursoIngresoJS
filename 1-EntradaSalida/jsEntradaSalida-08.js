@@ -9,13 +9,13 @@ function SacarResto()
 
 	var numeroDivisor;
 
-	var dividir;
-
 	var resto;
 
 	numeroDividendo = txtIdNumeroDividendo.value;
 	numeroDivisor = txtIdNumeroDivisor.value;
-	dividir = numeroDividendo / numeroDivisor;
+	numeroDividendo = parseFloat (numeroDividendo);
+	numeroDivisor = parseFloat (numeroDivisor);
+	
 	resto = numeroDividendo % numeroDivisor
 
 		alert("El resto de la division es: " + resto);

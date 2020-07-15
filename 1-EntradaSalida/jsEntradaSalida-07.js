@@ -13,8 +13,8 @@ function sumar()
 
 	numeroUno = txtIdNumeroUno.value;
 	numeroDos = txtIdNumeroDos.value;
-	numeroUno = parseInt (numeroUno);
-	numeroDos = parseInt (numeroDos);
+	numeroUno = parseFloat (numeroUno);
+	numeroDos = parseFloat (numeroDos);
     suma = numeroUno + numeroDos;
 
 	
@@ -31,6 +31,8 @@ function restar()
 
 	numeroUno = txtIdNumeroUno.value;
 	numeroDos = txtIdNumeroDos.value;
+	numeroUno = parseFloat (numeroUno);
+	numeroDos = parseFloat (numeroDos);
 	resta = numeroUno - numeroDos;
 
 	alert ( "La resta de los numeros es: " + resta  );
@@ -46,6 +48,8 @@ function multiplicar()
 
 	numeroUno = txtIdNumeroUno.value;
 	numeroDos = txtIdNumeroDos.value;
+	numeroUno = parseFloat (numeroUno);
+	numeroDos = parseFloat (numeroDos);
 	multiplicar = numeroUno * numeroDos;
 
 	alert ( "La multiplicación de los numeros es: " + multiplicar  );
@@ -61,6 +65,8 @@ function dividir()
 
 	numeroUno = txtIdNumeroUno.value;
 	numeroDos = txtIdNumeroDos.value;
+	numeroUno = parseFloat (numeroUno);
+	numeroDos = parseFloat (numeroDos);
 	dividir = numeroUno / numeroDos;
 
 	alert ( "La división de los numeros es: " + dividir  );	
