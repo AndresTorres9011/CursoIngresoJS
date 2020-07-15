@@ -11,14 +11,40 @@ function Rectangulo ()
 
     largo =  txtIdLargo.value;
     ancho =  txtIdAncho.value;
+    largo  = parseInt (largo);
+    ancho  = parseInt (ancho);
+
+    perimetro = ( 2 * largo) + ( 2 * ancho)  ;
+
+    alert ( "La cantidad de alambre a comprar es: " + (perimetro * 3) ) ;
     
    
 }
 function Circulo () 
 {
-	
+    var radio;
+    
+    radio =  txtIdRadio.value;
+    radio  = parseInt (radio);
+    
+    perimetro = 2 * 3.1416 * radio ;
+
+    alert ( "La cantidad de alambre a comprar es: " + (perimetro * 3) ) ;
 }
 function Materiales () 
 {
-	
+	var largo;
+    var ancho;
+
+    largo =  txtIdLargo.value;
+    ancho =  txtIdAncho.value;
+    largo  = parseInt (largo);
+    ancho  = parseInt (ancho);
+
+    area = largo * ancho  ;
+
+    cemento = area * 2
+    cal = area * 3
+
+    alert ( " Se necesitan " + (cemento) + " bolsas de cemento y " + (cal) + " bolsas de cal. " ) ;
 }
