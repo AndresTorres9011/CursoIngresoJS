@@ -8,43 +8,53 @@ function Rectangulo ()
 {
     var largo;
     var ancho;
+    var perimetro;
+    var alambreTotal;
 
     largo =  txtIdLargo.value;
     ancho =  txtIdAncho.value;
-    largo  = parseInt (largo);
-    ancho  = parseInt (ancho);
+    largo  = parseInt(largo);
+    ancho  = parseInt(ancho);
 
-    perimetro = ( 2 * largo) + ( 2 * ancho)  ;
+    perimetro = (2*largo) + (2*ancho) ;
+    alambreTotal = perimetro * 3
 
-    alert ( "La cantidad de alambre a comprar es: " + (perimetro * 3) ) ;
+    alert ("La cantidad de alambre a comprar es: " + alambreTotal);
     
    
 }
 function Circulo () 
 {
     var radio;
+    var perimetro;
+    var alambreTotal;
     
     radio =  txtIdRadio.value;
-    radio  = parseInt (radio);
+    radio  = parseFloat(radio);
     
-    perimetro = 2 * 3.1416 * radio ;
+    perimetro = 2 * Math.PI * radio;
+    perimetro = perimetro.toFixed(2);
+    alambreTotal = perimetro * 3;
 
-    alert ( "La cantidad de alambre a comprar es: " + (perimetro * 3) ) ;
+    alert ("La cantidad de alambre a comprar es: " + alambreTotal);
 }
 function Materiales () 
 {
 	var largo;
     var ancho;
+    var area;
+    var cemento;
+    var cal;
 
-    largo =  txtIdLargo.value;
-    ancho =  txtIdAncho.value;
-    largo  = parseInt (largo);
-    ancho  = parseInt (ancho);
+    largo  =  txtIdLargo.value;
+    ancho  =  txtIdAncho.value;
+    largo  = parseInt(largo);
+    ancho  = parseInt(ancho);
 
-    area = largo * ancho  ;
+    area = largo * ancho;
 
-    cemento = area * 2
-    cal = area * 3
+    cemento = area * 2;
+    cal = area * 3;
 
-    alert ( " Se necesitan " + (cemento) + " bolsas de cemento y " + (cal) + " bolsas de cal. " ) ;
+    alert (" Se necesitan " + (cemento) + " bolsas de cemento y " + (cal) + " bolsas de cal. ");
 }
