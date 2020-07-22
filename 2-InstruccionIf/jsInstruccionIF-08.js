@@ -6,20 +6,16 @@ function mostrar()
 {
 	//tomo la edad  
 	var edad;
-	var soltero;
-	var casado;
-	var divorciado;
+	var estadoCivilPersona;	
 	
-
 	edad = txtIdEdad.value;
 	edad = parseInt(edad);
 
-	soltero = estadoCivil.value;
-	casado = estadoCivil.value;
-	divorciado = estadoCivil.value;
+	estadoCivilPersona = estadoCivil.value
 	
 	
-	if( edad >17 && estadoCivil == soltero )
+	
+	if( edad >17 && estadoCivilPersona == "Soltero" )
 	{
 	   alert("Es soltero y no es menor.")
 	}
