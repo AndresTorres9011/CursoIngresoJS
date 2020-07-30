@@ -12,7 +12,104 @@ function ComenzarIngreso ()
  	//definicion de variables
  	var edadIngresada;
  	var sexoIngresado;
- 	var estadoCivilIngresado;
+	var estadoCivilIngresado;
+	var sueldoIngresado;
+	var legajoIngresado;
+	var nacionalidadIngresada;
+	 
+	edadIngresada = prompt("Ingrese su edad(18-90)");
+	edadIngresada =parseInt(edadIngresada);
+
+	while(edadIngresada<18 || edadIngresada>90)
+	 {
+		edadIngresada = prompt("¡Error reingrese su edad(18-90)!");
+	 	edadIngresada =parseInt(edadIngresada);
+	 }
+	 txtIdEdad.value = edadIngresada;
+
+	 sexoIngresado = prompt("Ingrese su sexo (F-M)");
+
+	 while(sexoIngresado!="F" && sexoIngresado!="M")
+	 {
+		sexoIngresado = prompt("¡Error reingrese su sexo (F-M)!");
+	 	
+	 }
+	 switch(sexoIngresado)
+	 {
+		 case "F":
+			sexoIngresado = "Femenino";
+		 break;	
+		 default:
+			sexoIngresado = "Masculino";
+	 }
+	 txtIdSexo.value = sexoIngresado;
+
+	 estadoCivilIngresado = prompt("Ingrese su estado civil (1-para soltero/a, 2-para casado/a, 3-para divorciado/a y 4-para viudo/a)");
+
+	 while(estadoCivilIngresado!="1" && estadoCivilIngresado!="2" && estadoCivilIngresado!="3" && estadoCivilIngresado!="4")
+	 {
+		estadoCivilIngresado = prompt("¡Error reingrese su estado civil (1-para soltero/a, 2-para casado/a, 3-para divorciado/a y 4-para viudo/a)!");
+	 	
+	 }	 
+	 switch(estadoCivilIngresado)
+	 {
+		 case "1":
+			estadoCivilIngresado = "Soltero/a"
+		 break;	
+		 case "2":
+			estadoCivilIngresado = "Casado/a"
+		 break;	
+		 case "3":
+			estadoCivilIngresado = "Divorciado/a"
+		 break;	
+		 default:
+			estadoCivilIngresado = "Viudo/a" 
+	 }
+	 txtIdEstadoCivil.value = estadoCivilIngresado;
+
+	 sueldoIngresado = prompt("Ingrese su sueldo(>8000)");
+	 sueldoIngresado =parseInt(sueldoIngresado);
+
+	 while(sueldoIngresado<8000)
+	 {
+		sueldoIngresado = prompt("Error reingrese su sueldo(>8000)");
+	    sueldoIngresado =parseInt(sueldoIngresado);
+	 }
+	 txtIdSueldo.value = sueldoIngresado;
+
+	 legajoIngresado = prompt("Ingrese su numero de legajo(# de 4 cifras)");
+	 legajoIngresado =parseInt(legajoIngresado);
+
+	 while(legajoIngresado<1000 || legajoIngresado>9999)
+	 {
+		legajoIngresado = prompt("Reingrese su numero de legajo (# de 4 cifras)");
+	    legajoIngresado =parseInt(legajoIngresado);
+	 }
+	 txtIdLegajo.value = legajoIngresado;
+	
+	 nacionalidadIngresada = prompt("Ingrese su nacionalidad (“A” para argentinos, “E” para extranjeros, “N” para nacionalizados.)");
+
+	 while(nacionalidadIngresada!="A" && nacionalidadIngresada!="E" && nacionalidadIngresada!="N")
+	 {
+		nacionalidadIngresada = prompt("Reingrese su nacionalidad (“A” para argentinos, “E” para extranjeros, “N” para nacionalizados.)");	
+	 }
+
+	 switch(nacionalidadIngresada)
+	 {
+		 case "A":
+		  nacionalidadIngresada = "Argentina"
+		 break;
+		 case "E":
+		  nacionalidadIngresada = "Extranjero"
+		 break;
+		 default:
+		  nacionalidadIngresada = "Nacionalizado"
+	 }
+	 txtIdNacionalidad.value = nacionalidadIngresada;
+
+	 
+	 
+	 
 
 
 
