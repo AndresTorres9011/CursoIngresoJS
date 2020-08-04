@@ -5,11 +5,13 @@ function mostrar()
 {
 	var numeroIngresado;
 	var contador;
+	var contadorNegativos;
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
 
 	contador=0;
+	contadorNegativos = 0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta=true;
@@ -19,7 +21,7 @@ function mostrar()
 		{
 			numeroIngresado = prompt("¡Ingrese un numero!");
 			numeroIngresado = parseInt(numeroIngresado);
-			respuesta = confirm("¿Quiere ingresar mas numeros?");
+			
 			if(numeroIngresado>0)
 			{
 				sumaPositivos = sumaPositivos + numeroIngresado;
@@ -27,16 +29,29 @@ function mostrar()
 			}
 			else
 			{
-				//numeroIngresado = prompt("¡Ingrese un numero!");
+				if(numeroIngresado<0)
+				{
+					//numeroIngresado = prompt("¡Ingrese un numero!");
 				//numeroIngresado = parseInt(numeroIngresado);		
-					multiplicacionNegativos = (multiplicacionNegativos) * (numeroIngresado);
-					contador = contador + 1;
-		
-					//respuesta = confirm("¿Quiere ingresar mas numeros?");				
+				multiplicacionNegativos = (multiplicacionNegativos) * (numeroIngresado);
+				contadorNegativos = contadorNegativos + 1;
+					//respuesta = confirm("¿Quiere ingresar mas numeros?");
+				}
+								
 			}
+			respuesta = confirm("¿Quiere ingresar mas numeros?");
 		}
+		
 		txtIdSuma.value = sumaPositivos;
-		txtIdProducto.value = multiplicacionNegativos;
-	
+
+		if(contadorNegativos==0)
+		{
+			txtIdProducto.value = 0;
+		}
+		else
+		{
+			txtIdProducto.value = multiplicacionNegativos;
+		}
+		
 
 }//FIN DE LA FUNCIÓN

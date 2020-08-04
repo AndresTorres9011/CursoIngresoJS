@@ -1,6 +1,16 @@
+//Enunciado:
+//al presionar el botón repetir hasta que utilizamos 'BREAK'.
 function mostrar()
 {
-	alert("ok");
+	for(;;)
+	{
+		var respuesta=confirm("Desea continuar")
+	 	if(respuesta==false)
+		{
+		break;
+		}
+	}
+	
 
 
 
