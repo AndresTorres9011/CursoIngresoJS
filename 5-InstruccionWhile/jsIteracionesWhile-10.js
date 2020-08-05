@@ -57,7 +57,7 @@ function mostrar()
 			sumaNegativos = (sumaNegativos)+ (numero);
 			contadorNegativos = contadorNegativos + 1;
 		}
-		if(numero %2 == 0)
+		if(numero %2 == 0 && numero!=0)
 		{
 			contadorNumerosPares = contadorNumerosPares + 1;
 		}
