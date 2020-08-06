@@ -10,11 +10,11 @@ function mostrar()
 
 	notaExamen = Math.floor(Math.random() * 10) + 1;
 
-	alert (notaExamen);
+	//alert (notaExamen);
 
 	if (notaExamen>8 && notaExamen<11) 
 	{
-	    alert ("EXCELENTE");
+	    alert ("EXCELENTE NOTA: " +notaExamen);
 	}
 	else
 	{
@@ -23,11 +23,11 @@ function mostrar()
 			NOTA MENOR A 4 */
 		if (notaExamen>3)
 		{
-			alert ("APROBÓ");
+			alert ("APROBÓ NOTA: "+notaExamen );
 		}
 		else
 		{
-			alert ("Vamos, la proxima se puede");
+			alert ("Vamos, la proxima se puede Nota: "+notaExamen);
 		}
 	}	
 

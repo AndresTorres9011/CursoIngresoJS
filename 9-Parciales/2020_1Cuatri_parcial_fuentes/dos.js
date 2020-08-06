@@ -18,88 +18,169 @@ function mostrar()
   var producto;
   var cantidadBolsas;
   var precioBolsa;
-  var descuento;
   var respuesta;
   var acumuladorBolsaCemento;
   var acumuladorBolsaArena;
   var acumuladorBolsaCal;
-  var precioBolsaCemento;
-  var precioBolsaArena;
-  var precioBolsaCal;
+  //var acumuladorPrecioBolsaCemento;
+  //var acumuladorPrecioBolsaArena;
+  //var acumuladorPrecioBolsaCal;
+  //var importeBolsaCemento;
+  //var importeBolsaArena;
+  //var importeBolsaCal;
+  //var acumuladorImporteBolsaCemento;
+  //var acumuladorImporteBolsaArena;
+  //var acumuladorImporteBolsaCal;
+  var acumuladorImporteTotalBolsas;
   var totalBolsas;
-  var precioTotalBolsas;
+  var importeTotalBolsas;
   var masCantidadBolsas;
-  var importeSinDescuento;
   var importeConDescuento;
+  var flagArena;
+  var flagCal;
+  var flagCemento;
+  var precioBolsaMasCaroCemento;
+  var precioBolsaMasCaroCal;
+  var precioBolsaMasCaroArena;
+  var precioMasCaroBolsas;
 
+  //acumuladorPrecioBolsaCemento=0;
+  //acumuladorPrecioBolsaArena=0;
+  //acumuladorPrecioBolsaCal=0;
   acumuladorBolsaCemento=0;
   acumuladorBolsaArena=0;
   acumuladorBolsaCal=0;
+  acumuladorImporteTotalBolsas=0;
+  //acumuladorImporteBolsaCemento=0;
+  //acumuladorImporteBolsaArena=0;
+  //acumuladorImporteBolsaCal=0;
   respuesta=true;
+  flagArena=0;
+  flagCal=0;
+  flagCemento=0;
+
 
   do
   {
-    producto=prompt("Ingrese producto (cemento-cal-arena)");
-    while(producto!="cemento" && producto!="cal" && producto!="arena")
-    {
-      producto=prompt("Reingrese producto (cemento-cal-arena)");
-    }
+      producto=prompt("Ingrese producto (cemento-cal-arena)");
+      while(producto!="cemento" && producto!="cal" && producto!="arena")
+      {
+        producto=prompt("Reingrese producto (cemento-cal-arena)");
+      }
 
-    cantidadBolsas=prompt("Ingrese cantidad de bolsas");
-    cantidadBolsas=parseInt(cantidadBolsas);
+      cantidadBolsas=prompt("Ingrese cantidad de bolsas");
+      cantidadBolsas=parseInt(cantidadBolsas);
 
-    precioBolsa=prompt("Ingrese precio de cada bolsa (precio>0)");
-    precioBolsa=parseInt(precioBolsa);
-    while( precioBolsa<1)
-    {
-      precioBolsa=prompt("Reingrese precio de cada bolsa (precio>0)");
+      precioBolsa=prompt("Ingrese precio de cada bolsa ($precio mayor que 0)");
       precioBolsa=parseInt(precioBolsa);
-    }
+      while( precioBolsa<1)
+      {
+        precioBolsa=prompt("Reingrese precio de cada bolsa ($precio mayor que 0)");
+        precioBolsa=parseInt(precioBolsa);
+      }
 
-    switch(producto)
-    {
-      case"arena":
-      acumuladorBolsaArena = acumuladorBolsaArena + cantidadBolsas;
-      precioBolsaArena = cantidadBolsas * precioBolsa; 
-      console.log(precioBolsaArena);
-      break;
-      case"cal":
-      acumuladorBolsaCal = acumuladorBolsaCal + cantidadBolsas;
-      precioBolsaCal = cantidadBolsas * precioBolsa;
-      console.log(precioBolsaCal);
-      break;
-      default:
-      acumuladorBolsaCemento = acumuladorBolsaCemento + cantidadBolsas;
-      precioBolsaCemento = cantidadBolsas * precioBolsa;
-      console.log(precioBolsaCemento);
-      break;
-    }
-    
-    
+      switch(producto)
+      {
+        case"arena":
+        acumuladorBolsaArena = acumuladorBolsaArena + cantidadBolsas;
+        //acumuladorPrecioBolsaArena = acumuladorPrecioBolsaArena + precioBolsa;
+        //importeBolsaArena = cantidadBolsas * precioBolsa;
+        //acumuladorImporteBolsaArena = acumuladorImporteBolsaArena + importeBolsaArena; 
+        console.log(acumuladorBolsaArena);
+        //console.log(acumuladorPrecioBolsaArena);
+        //console.log(importeBolsaArena);
+        //console.log(acumuladorImporteBolsaArena);
 
-    respuesta=confirm("¿Desea ingresar mas datos?");
+        if(flagArena==0)
+          {
+            precioBolsaMasCaroArena=precioBolsa;
+            flagArena=1;
+          }
+          else
+          {
+            if(precioBolsa>precioBolsaMasCaroArena)
+            {
+              precioBolsaMasCaroArena=precioBolsa;
+            }
+          }
+          console.log(precioBolsaMasCaroArena);
+        break;
+        case"cal":
+        acumuladorBolsaCal = acumuladorBolsaCal + cantidadBolsas;
+       // acumuladorPrecioBolsaCal = acumuladorPrecioBolsaCal + precioBolsa;
+        //importeBolsaCal =  cantidadBolsas * precioBolsa;
+        //acumuladorImporteBolsaCal = acumuladorImporteBolsaCal + importeBolsaCal;
+        console.log(acumuladorBolsaCal);
+        //console.log(acumuladorPrecioBolsaCal);
+        //console.log(acumuladorImporteBolsaCal);
+
+        if(flagCal==0)
+          {
+            precioBolsaMasCaroCal=precioBolsa;
+            flagCal=1;
+          }
+          else
+          {
+            if(precioBolsa>precioBolsaMasCaroCal)
+            {
+              precioBolsaMasCaroCal=precioBolsa;
+            }
+          }
+          console.log(precioBolsaMasCaroCal);
+        break;
+        default:
+        acumuladorBolsaCemento = acumuladorBolsaCemento + cantidadBolsas;
+        //acumuladorPrecioBolsaCemento = acumuladorPrecioBolsaCemento + precioBolsa;
+        //importeBolsaCemento =  cantidadBolsas * precioBolsa;
+        //acumuladorImporteBolsaCemento = acumuladorImporteBolsaCemento + importeBolsaCemento;
+        console.log(acumuladorBolsaCemento);
+        //console.log(acumuladorPrecioBolsaCemento);
+        //console.log(acumuladorImporteBolsaCemento);
+
+        if(flagCemento==0)
+        {
+          precioBolsaMasCaroCemento=precioBolsa;
+          flagCemento=1;
+        }
+        else
+        {
+          if(precioBolsa>precioBolsaMasCaroCemento)
+          {
+            precioBolsaMasCaroCemento=precioBolsa;
+          }
+        }
+        console.log(precioBolsaMasCaroCemento);
+        break;
+      } 
+      acumuladorImporteTotalBolsas = acumuladorImporteTotalBolsas+(precioBolsa*cantidadBolsas);
+     
+      respuesta=confirm("¿Desea ingresar mas datos?");
   }while(respuesta==true);
 
+ // importeTotalBolsas = acumuladorImporteBolsaArena + acumuladorImporteBolsaCal + acumuladorImporteBolsaCemento;
+  importeTotalBolsas = acumuladorImporteTotalBolsas;
+   console.log(importeTotalBolsas)
+   //document.write("<h2>El importe total sin descuento es: "+ importeTotalBolsas +"<br></h2>");
+
   totalBolsas = acumuladorBolsaCemento + acumuladorBolsaCal + acumuladorBolsaArena;
-  document.write("<h2>la cantidad de bolsas es: "+ totalBolsas +"<br></h2>");
- /* if(totalBolsas>30)
+  //document.write("<h2>La cantidad de bolsas es: "+ totalBolsas +"<br></h2>");
+
+  if(totalBolsas>30)
   {
-    descuento = 0.75;
-  }
-  if(totalBolsas>10 && totalBolsas<30)
-  {
-    descuento = 0.85;
+    importeConDescuento = importeTotalBolsas * 0.75;
   }
   else
   {
-    descuento = 1;
-  }*/
-
-  precioTotalBolsas = precioBolsaArena + precioBolsaCal + precioBolsaCemento;
-    console.log(precioTotalBolsas)
-  
-  //document.write("<h2>El precio total sin descuento es: "+ precioTotalBolsas +"<br></h2>");
-  //importeSinDescuento = totalBolsas +
+      if(totalBolsas>10 && totalBolsas<30)
+    {
+      importeConDescuento = importeTotalBolsas * 0.85;
+    }
+    else
+    {
+      importeConDescuento = "Usted no compro mas de 10 bolsas!!";
+    }
+  }
+  //document.write("<h2>El importe con descuento es: "+ importeConDescuento +"<br></h2>");
   
   if(acumuladorBolsaCemento>acumuladorBolsaCal && acumuladorBolsaCemento>acumuladorBolsaArena)
   {
@@ -109,19 +190,45 @@ function mostrar()
   {
     if(acumuladorBolsaCal>acumuladorBolsaCemento && acumuladorBolsaCal>acumuladorBolsaArena)
     {
-      masCantidadBolsas = "cal";
+    masCantidadBolsas = "cal";
     }
+
     else 
     {
       if(acumuladorBolsaArena>acumuladorBolsaCal && acumuladorBolsaArena>acumuladorBolsaCemento)
       {
         masCantidadBolsas = "arena";
       }
-        
     }
   }
-  
+  //document.write("<h2>El producto con mas cantidad de bolsas es: "+ masCantidadBolsas +"<br></h2>");
 
+  if(precioBolsaMasCaroArena>precioBolsaMasCaroCal && precioBolsaMasCaroArena>precioBolsaMasCaroCemento)
+  {
+    precioMasCaroBolsas ="arena";
+  }
+  else
+  {
+    if(precioBolsaMasCaroCal>precioBolsaMasCaroArena && precioBolsaMasCaroCal>precioBolsaMasCaroCemento)
+    {
+    precioMasCaroBolsas = "cal";
+    }
+    else
+    {
+      if(precioBolsaMasCaroCemento>precioBolsaMasCaroArena && precioBolsaMasCaroCemento>precioBolsaMasCaroCal)
+      {
+        precioMasCaroBolsas = "cemento";
+      }
+    }
+        
+
+  }
+  //document.write("<h2>El producto con el precio mas caro es: "+ precioMasCaroBolsas +"<br></h2>");
+
+  document.write("<h2>El importe total sin descuento es: "+ importeTotalBolsas +"<br></h2>");
+  document.write("<h2>La cantidad de bolsas es: "+ totalBolsas +"<br></h2>");
+  document.write("<h2>El importe con descuento es: "+ importeConDescuento +"<br></h2>");
   document.write("<h2>El producto con mas cantidad de bolsas es: "+ masCantidadBolsas +"<br></h2>");
+  document.write("<h2>El producto con el precio mas caro es: "+ precioMasCaroBolsas +"<br></h2>");
 
 }

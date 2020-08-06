@@ -4,8 +4,15 @@ function mostrar()
 
 {
 	var numeroAleatorio;
+	var minimo;
+	var maximo;
 
-	numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+	minimo=1;
+	maximo=10;
+
+	numeroAleatorio = Math.round(Math.random() * (maximo - minimo) + minimo);
+
+	//numeroAleatorio = Math.floor(Math.random() * 10)+ 1;
 
 	alert (numeroAleatorio);
 

@@ -31,6 +31,7 @@ function mostrar()
 	var masProductos;
 	var promedio;
 	var flag;
+	var flagProductoMasUnidades;
 	
 
 	cantidadAlcoholBarato=0;
@@ -41,6 +42,7 @@ function mostrar()
 	sumaBarbijo=0;
 	sumaJabon=0;
 	flag=0;
+	flagProductoMasUnidades=0;
 	
 
 	for(var i=0;i<5;i=i+1)
@@ -109,19 +111,25 @@ function mostrar()
 	{
 		masProductos="alcohol";
 		promedio=sumaAlcohol/contadorAlcohol;
-
 	}
-	if(sumaJabon>sumaAlcohol && sumaJabon>sumaBarbijo)
+	else
 	{
+		if(sumaJabon>sumaAlcohol && sumaJabon>sumaBarbijo)
+		{
 		masProductos="jabon";
 		promedio=sumaJabon/contadorJabon;
+		}
+		else
+		{
+			if(sumaBarbijo>sumaJabon && sumaBarbijo>sumaAlcohol)
+			{
+			masProductos="barbijo";
+			promedio=sumaBarbijo/contadorBarbijo;
+			}	
+		}
+	
 	}
-	if(sumaBarbijo>sumaJabon && sumaBarbijo>sumaAlcohol)
-	{
-		masProductos="barbijo";
-		promedio=sumaBarbijo/contadorBarbijo;
-	}
-
+	
 	document.write("<h2>La cantidad del alcohol mas barato es: "+ cantidadAlcoholBarato +" y su fabricante es:" +alcoholBaratoFabricante+"<br></h2>");
 	document.write("<h2>El producto con mas articulos es: "+ masProductos +" y su promedio por compra es:" +promedio+"<br></h2>");
 	document.write("<h2>La cantidad de jabones en total es: "+ sumaJabon + " unidades <br></h2>");
