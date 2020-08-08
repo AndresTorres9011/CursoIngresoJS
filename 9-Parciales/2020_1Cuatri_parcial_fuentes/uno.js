@@ -30,8 +30,8 @@ function mostrar()
 	var sumaJabon;
 	var masProductos;
 	var promedio;
-	var flag;
-	var flagProductoMasUnidades;
+	var flagAlcohol;
+	
 	
 
 	cantidadAlcoholBarato=0;
@@ -41,8 +41,8 @@ function mostrar()
 	sumaAlcohol=0;
 	sumaBarbijo=0;
 	sumaJabon=0;
-	flag=0;
-	flagProductoMasUnidades=0;
+	flagAlcohol=0;
+	
 	
 
 	for(var i=0;i<5;i=i+1)
@@ -55,7 +55,7 @@ function mostrar()
 
 		precio=prompt("Ingrese el precio del producto ($100 y $300)");
 		precio=parseInt(precio);
-		while(precio<100 || precio>300)
+		while(precio<100 || precio>300 || isNaN(precio))
 		{
 			precio=prompt("Reingrese el precio del producto ($100 y $300)");
 		    precio=parseInt(precio);
@@ -63,7 +63,7 @@ function mostrar()
 
 		cantidad=prompt("Ingrese cantidad de producto(0-1000 unidades)");
 		cantidad=parseInt(cantidad);
-		while(cantidad<1 || cantidad>1000)
+		while(cantidad<1 || cantidad>1000 || isNaN(cantidad))
 		{
 			cantidad=prompt("Reingrese cantidad de producto(0-1000 unidades)");
 			cantidad=parseInt(cantidad);
@@ -77,22 +77,23 @@ function mostrar()
 			case"alcohol":
 			contadorAlcohol = contadorAlcohol+1;
 			sumaAlcohol = sumaAlcohol + cantidad;
-				if(flag==0)
+
+				if(flagAlcohol==0 || precio<alcoholMenorPrecio)
 				{
 					alcoholMenorPrecio=precio;
 					alcoholBaratoFabricante=fabricante;
 					cantidadAlcoholBarato=cantidad;
-					flag=1;
+					flagAlcohol=1;
 				}
-				else
-				{
-					if(precio<alcoholMenorPrecio)
-					{
-					alcoholMenorPrecio=precio;
-					alcoholBaratoFabricante=fabricante;
-					cantidadAlcoholBarato=cantidad;	
-					}
-				}
+				//else
+				//{
+				//	if(precio<alcoholMenorPrecio)
+				//	{
+				//	alcoholMenorPrecio=precio;
+					//alcoholBaratoFabricante=fabricante;
+					//cantidadAlcoholBarato=cantidad;	
+					//}
+				//}
 			break;
 
 			case"jabon":
@@ -130,7 +131,7 @@ function mostrar()
 	
 	}
 	
-	document.write("<h2>La cantidad del alcohol mas barato es: "+ cantidadAlcoholBarato +" y su fabricante es:" +alcoholBaratoFabricante+"<br></h2>");
+	document.write("<h2>La cantidad del alcohol mas barato es: "+ cantidadAlcoholBarato +" su fabricante es:" + alcoholBaratoFabricante +" y su precio es: "+ alcoholMenorPrecio + "<br></h2>");
 	document.write("<h2>El producto con mas articulos es: "+ masProductos +" y su promedio por compra es:" +promedio+"<br></h2>");
 	document.write("<h2>La cantidad de jabones en total es: "+ sumaJabon + " unidades <br></h2>");
 
