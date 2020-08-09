@@ -1,4 +1,5 @@
-/*Enunciado:
+/*Torres Caicedo Andres Felipe
+Enunciado:
 Bienvenidos.
 En el ingreso a un viaje en avion nos solicitan nombre , edad, sexo("f" o "m") 
 y estado civil("soltero", "casado" o "viudo")y temperatura corporal.
@@ -91,7 +92,7 @@ function mostrar()
 			break;		 
 		}		
 
-		if(edad>60)
+		if(edad>60 && temperarturaCorporal>38)
 			{
 				contadorPersonasMayores = contadorPersonasMayores + 1;
 			}

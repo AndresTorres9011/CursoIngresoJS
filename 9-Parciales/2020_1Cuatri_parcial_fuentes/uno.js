@@ -42,8 +42,6 @@ function mostrar()
 	sumaBarbijo=0;
 	sumaJabon=0;
 	flagAlcohol=0;
-	
-	
 
 	for(var i=0;i<5;i=i+1)
 	{
