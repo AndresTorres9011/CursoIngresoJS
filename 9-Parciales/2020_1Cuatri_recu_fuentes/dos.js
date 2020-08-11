@@ -88,13 +88,13 @@ function mostrar()
 
   totalBolsas=acumuladorCantidadArena+acumuladorCantidadCal+acumuladorCantidadCemento;
 
-  if(totalBolsas>=31)
+  if(totalBolsas>30)
   {
     importeDescuento= acumuladorPrecioBruto * 0.75;
   }
   else
   {
-    if(totalBolsas>10 && totalBolsas<=30)
+    if(totalBolsas>10 )
     {
       importeDescuento= acumuladorPrecioBruto * 0.85;
     }
